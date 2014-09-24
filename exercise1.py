@@ -44,9 +44,31 @@ def grade_to_gpa(grade):
     gpa = 0.0
 
     if type(grade) is str:
-        print ("letter") # remove this line once the code is implemented
         # check that the grade is one of the accepted values
         # assign grade to letter_grade
+
+        # Added by Kyungho Jung
+        # Nested if statement to evaluate the current letter grade
+        # and return the appropriate GPA scale.
+        if grade == "A+":
+            gpa = 4.0
+        elif grade == "A":
+            gpa = 4.0
+        elif grade == "A-":
+            gpa = 3.7
+        elif grade == "B+":
+            gpa = 3.3
+        elif grade == "B":
+            gpa = 3.0
+        elif grade =="B-":
+            gpa = 2.7
+        elif grade =="FZ":
+            gpa = 0.0
+        else:
+            # If the passed string is not a proper letter grade, then it will raise the ValueError Exception
+            raise ValueError("Invalid letter grade value passed as parameter")
+
+
     elif type(grade) is int:
         print("mark") # remove this line once the code is implemented
         # check that grade is in the accepted range
@@ -59,8 +81,6 @@ def grade_to_gpa(grade):
 
     # write a long if-statement to convert letter_grade
     # assign the value to gpa
-    if letter_grade == "A":
-        gpa = 4.0
 
     return gpa
 
