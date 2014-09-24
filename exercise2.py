@@ -30,19 +30,26 @@ def checksum (upc):
         ValueError if string is the wrong length (with error string stating how many digits are over or under
     """
 
+    is_correct_upc_code = False
+
     # check type of input
-    # raise TypeError if not string
+    if type(upc) is str:
+        # check length of string
+        if len(upc) != 12:
+            # raise ValueError if not 12
+            raise ValueError("Length of the passed parameter is not equal to 12")
+        else:
+            # convert string to array
+            # hint: use the list function
 
-    # check length of string
-    # raise ValueError if not 12
+            # generate checksum using the first 11 digits provided
+            # check against the the twelfth digit
 
-    # convert string to array
-    # hint: use the list function
+            # return True if they are equal, False otherwise
+            is_correct_upc_code = False
+    else:
+        # raise TypeError if not string
+        raise TypeError("Passed parameter is not string type")
 
-    # generate checksum using the first 11 digits provided
-    # check against the the twelfth digit
-
-    # return True if they are equal, False otherwise
-
-    return False
+    return is_correct_upc_code
 
