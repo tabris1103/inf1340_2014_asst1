@@ -42,6 +42,10 @@ def checksum (upc):
             # convert string to array
             # hint: use the list function
 
+            upc_array = upc.list
+            for letter in upc_array:
+                print("Hello")
+
             # generate checksum using the first 11 digits provided
             # check against the the twelfth digit
 

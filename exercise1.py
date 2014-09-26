@@ -65,19 +65,19 @@ def grade_to_gpa(grade):
     # Added by Kyungho Jung
     # If statement to evaluate the current letter grade
     # and return the appropriate GPA scale.
-    if grade == "A+":
+    if letter_grade == "A+":
         gpa = 4.0
-    elif grade == "A":
+    elif letter_grade == "A":
         gpa = 4.0
-    elif grade == "A-":
+    elif letter_grade == "A-":
          gpa = 3.7
-    elif grade == "B+":
+    elif letter_grade == "B+":
          gpa = 3.3
-    elif grade == "B":
+    elif letter_grade == "B":
          gpa = 3.0
-    elif grade =="B-":
+    elif letter_grade =="B-":
          gpa = 2.7
-    elif grade =="FZ":
+    elif letter_grade =="FZ":
          gpa = 0.0
 
     return gpa
