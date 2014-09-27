@@ -32,7 +32,7 @@ def test_letter_grade():
     # add more tests for invalid values
 
 
-def test_percentage_grade():
+def test_numerical_grade():
     """
     Numeric grade inputs
     """
@@ -77,3 +77,4 @@ def test_float_input():
         grade_to_gpa(82.5)
 
 # add functions for any other tests
+
