@@ -56,7 +56,7 @@ def decide_rps(player1, player2):
     choice_combinations["SP"] = 1
     choice_combinations["SS"] = 0
 
-    # Assign input values to "choices" variable
+    # Look up choices input values in dictionary and return game result
     choices = (player1 & player2)
     if choices in choice_combinations:
         result = choice_combinations[choices]
