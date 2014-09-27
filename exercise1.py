@@ -44,20 +44,19 @@ def grade_to_gpa(grade):
     gpa = 0.0
 
     if type(grade) is str:
-        # check that the grade is one of the accepted values
+        # Check that letter grade input is a valid input
         if grade == "A+" or grade == "A" or grade == "A-" or grade == "B+" or grade == "B" \
             or grade == "B-" or grade == "FZ":
             # These are valid letter grade inputs
             letter_grade = grade
         else:
-            # If the passed string is not a proper letter grade, then it will raise the ValueError Exception
+            # If the letter grade input is not valid, raise the ValueError Exception
             raise ValueError("Invalid letter grade input")
     elif type(grade) is int:
-        print("mark") # remove this line once the code is implemented
-        # check that grade is in the accepted range
+        # Check that numerical grade input is in the accepted range
         if (grade >= 0) and (grade <= 100):
             # These are valid numerical grade inputs
-            # Assigning corresponding letter grade for GPA
+            # Assigning corresponding letter grades for GPA assignments
             if grade >= 90:
                 letter_grade = "A+"
             elif grade >= 85:
@@ -74,15 +73,14 @@ def grade_to_gpa(grade):
                 letter_grade = "FZ"
 
         else:
-            # If the passed grade is not a proper numerical grade, then it will raise the ValueError Exception
+            # If the numerical grade is not valid, raise the ValueError Exception
             raise ValueError("Invalid numerical grade input")
     else:
-        # raise a TypeError exception
+        # Raise a TypeError exception
         raise TypeError("Invalid type passed as parameter")
 
     # Added by Kyungho Jung
-    # If statement to evaluate the current letter grade
-    # and return the appropriate GPA scale.
+    # If statements to evaluate the letter grade and return the corresponding GPA
     if letter_grade == "A+":
         gpa = 4.0
     elif letter_grade == "A":
