@@ -45,6 +45,11 @@ def grade_to_gpa(grade):
 
     if type(grade) is str:
         # check that the grade is one of the accepted values
+        if grade == "A+" or grade == "A" or grade == "A-" or grade == "B+" or grade == "B" \
+            or grade == "B-" or grade == "FZ":
+            # These are valid letter grade inputs
+
+
         # assign grade to letter_grade
 
         # If the passed string is not a proper letter grade, then it will raise the ValueError Exception
