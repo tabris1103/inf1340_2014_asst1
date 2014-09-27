@@ -48,14 +48,9 @@ def grade_to_gpa(grade):
         if grade == "A+" or grade == "A" or grade == "A-" or grade == "B+" or grade == "B" \
             or grade == "B-" or grade == "FZ":
             # These are valid letter grade inputs
-
-
-        # assign grade to letter_grade
-
-        # If the passed string is not a proper letter grade, then it will raise the ValueError Exception
-        raise ValueError("Invalid letter grade value passed as parameter")
-
-
+        else:
+            # If the passed string is not a proper letter grade, then it will raise the ValueError Exception
+            raise ValueError("Invalid letter grade value passed as parameter")
     elif type(grade) is int:
         print("mark") # remove this line once the code is implemented
         # check that grade is in the accepted range
