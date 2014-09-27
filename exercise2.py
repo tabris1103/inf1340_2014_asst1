@@ -2,7 +2,6 @@
 
 """
     Perform a checksum on a UPC
-
     Assignment 1, Exercise 2, INF1340 Fall 2014
 """
 
@@ -40,20 +39,31 @@ def checksum (upc):
             raise ValueError("Length of the passed parameter is not equal to 12")
         else:
             # convert string to array
-            # hint: use the list function
-
-            upc_array = upc.list
-            for letter in upc_array:
-                print("Hello")
+            upc_array = list(upc)
+            check_sum = 0
 
             # generate checksum using the first 11 digits provided
-            # check against the the twelfth digit
+            for string_index in range(0,11):
+                if string_index % 2 == 0:
+                    check_sum += int(upc_array.pop(0)) * 3
+                    print("Check Sum at " + str(string_index) + " = " + str(check_sum))
+                else:
+                    check_sum += int(upc_array.pop(0))
+                    print("Check Sum at " + str(string_index) + " = " + str(check_sum))
 
+            #Calculate modulo 10 of check_sum
+            mod_10_of_check_sum = check_sum % 10
+
+            #subtract mod_10_of_check_sum from 10 to get the calculated last digit
+            subtracting_from_10 = 10 - mod_10_of_check_sum
+
+            # check calculated last digit against the the twelfth digit
             # return True if they are equal, False otherwise
-            is_correct_upc_code = False
+            last_digit = int(upc_array.pop(0))
+            if subtracting_from_10 == last_digit:
+                is_correct_upc_code = True
     else:
         # raise TypeError if not string
         raise TypeError("Passed parameter is not string type")
 
     return is_correct_upc_code
-

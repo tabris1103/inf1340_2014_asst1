@@ -36,6 +36,8 @@ def test_input():
         checksum(786936224306)
 
     with pytest.raises(ValueError):
+        # Case when there is a non numeric value in the argument string
+        checksum("123s56789011")
         checksum("1")
         checksum("1234567890")
 
