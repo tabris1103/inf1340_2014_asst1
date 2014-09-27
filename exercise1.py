@@ -36,8 +36,8 @@ def grade_to_gpa(grade):
             Value is 0.0-4.0
 
     :raises:
-        TypeError if parameter is not a string or integer
-        ValueError if parameter is out of range
+        TypeError if input is not a string or integer
+        ValueError if input is out of range
     """
 
     letter_grade = ""
@@ -73,11 +73,11 @@ def grade_to_gpa(grade):
                 letter_grade = "FZ"
 
         else:
-            # If the numerical grade is not valid, raise the ValueError Exception
+            # If the numerical grade input is not valid, raise the ValueError Exception
             raise ValueError("Invalid numerical grade input")
     else:
         # Raise a TypeError exception
-        raise TypeError("Invalid type passed as parameter")
+        raise TypeError("Invalid type input")
 
     # Added by Kyungho Jung
     # If statements to evaluate the letter grade and return the corresponding GPA
