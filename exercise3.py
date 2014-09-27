@@ -28,6 +28,22 @@ def decide_rps(player1, player2):
         ValueError if input is is not "R", "P", or "S".
     """
 
+    # Define valid inputs
+    if type(player1) is str and type(player2) is str:
+        if (player1 == "R") or (player1 == "P") or (player1 == "S"):
+            # These are valid player1 inputs
+        else:
+            # If the input is not valid, raise the ValueError Exception
+            raise ValueError("Invalid player1 input")
+        if (player2 == "R") or (player2 == "P") or (player2 == "S"):
+            # These are valid player2 inputs
+        else:
+            # If the input is not valid, raise the ValueError Exception
+            raise ValueError("Invalid player2 input")
+    else:
+        # Raise a TypeError exception
+        raise TypeError("Invalid type input - Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
+
     # Define choices and corresponding results in dictionary
     choices = {}
     choices["RR"] = 0
@@ -40,5 +56,6 @@ def decide_rps(player1, player2):
     choices["SP"] = 1
     choices["SS"] = 0
 
+    #
     return 1
 
