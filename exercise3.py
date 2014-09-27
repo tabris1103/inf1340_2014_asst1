@@ -2,7 +2,7 @@
 
 """ Assignment 1, Exercise 3, INF1340, Fall, 2014. Rock, Paper, Scissors.
 
-This module contains a function called decide_rps.
+This module contains a function called decide_rps. This function returns the result of the game
 
 Example:
     $ python exercise3.py
@@ -28,6 +28,17 @@ def decide_rps(player1, player2):
         ValueError if input is is not "R", "P", or "S".
     """
 
+    # Define choices and corresponding results in dictionary
+    choices = {}
+    choices["RR"] = 0
+    choices["RP"] = 2
+    choices["RS"] = 1
+    choices["PR"] = 1
+    choices["PP"] = 0
+    choices["PS"] = 2
+    choices["SR"] = 2
+    choices["SP"] = 1
+    choices["SS"] = 0
 
     return 1
 
