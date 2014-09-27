@@ -57,6 +57,7 @@ def grade_to_gpa(grade):
         # check that grade is in the accepted range
         if (grade >= 0) and (grade <= 100):
             # These are valid numerical grade inputs
+            # Assigning corresponding letter grade for GPA
             if grade >= 90:
                 letter_grade = "A+"
             elif grade >= 85:
@@ -73,16 +74,11 @@ def grade_to_gpa(grade):
                 letter_grade = "FZ"
 
         else:
-            # If the passed is not a proper numerical grade, then it will raise the ValueError Exception
+            # If the passed grade is not a proper numerical grade, then it will raise the ValueError Exception
             raise ValueError("Invalid numerical grade input")
-
-        # convert the numeric grade to a letter grade
-        # assign the value to letter_grade
-        # hint: letter_grade = mark_to_letter(grade)
     else:
         # raise a TypeError exception
         raise TypeError("Invalid type passed as parameter")
-
 
     # Added by Kyungho Jung
     # If statement to evaluate the current letter grade
@@ -92,15 +88,15 @@ def grade_to_gpa(grade):
     elif letter_grade == "A":
         gpa = 4.0
     elif letter_grade == "A-":
-         gpa = 3.7
+        gpa = 3.7
     elif letter_grade == "B+":
-         gpa = 3.3
+        gpa = 3.3
     elif letter_grade == "B":
-         gpa = 3.0
-    elif letter_grade =="B-":
-         gpa = 2.7
-    elif letter_grade =="FZ":
-         gpa = 0.0
+        gpa = 3.0
+    elif letter_grade == "B-":
+        gpa = 2.7
+    elif letter_grade == "FZ":
+        gpa = 0.0
 
     return gpa
 
