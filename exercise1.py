@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-""" Assignment 1, Exercise 1, INF1340, Fall, 2014. Grade to gpa conversion
+""" Assignment 1, Exercise 1, INF1340, Fall, 2014. Grade to GPA conversion
 
-This module contains one function grade_to_gpa. It can be passed a parameter
-that is an integer (0-100) or a letter grade (A+, A, A-, B+, B, B-, or FZ). All
-other inputs will result in an error.
+This module contains one function grade_to_gpa. The input can be an integer (0-100)
+or a letter grade (A+, A, A-, B+, B, B-, or FZ).
+All other inputs will result in an error.
 
 Example:
     $ python exercise1.py
