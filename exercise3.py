@@ -45,17 +45,24 @@ def decide_rps(player1, player2):
         raise TypeError("Invalid type input - Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
 
     # Define choices and corresponding results in dictionary
-    choices = {}
-    choices["RR"] = 0
-    choices["RP"] = 2
-    choices["RS"] = 1
-    choices["PR"] = 1
-    choices["PP"] = 0
-    choices["PS"] = 2
-    choices["SR"] = 2
-    choices["SP"] = 1
-    choices["SS"] = 0
+    choice_combinations = {}
+    choice_combinations["RR"] = 0
+    choice_combinations["RP"] = 2
+    choice_combinations["RS"] = 1
+    choice_combinations["PR"] = 1
+    choice_combinations["PP"] = 0
+    choice_combinations["PS"] = 2
+    choice_combinations["SR"] = 2
+    choice_combinations["SP"] = 1
+    choice_combinations["SS"] = 0
 
-    #
-    return 1
+    # Assign input values to "choices" variable
+    choices = (player1 & player2)
+    if choices in choice_combinations:
+        result = choice_combinations[choices]
+    else:
+        # Raise a ValueError Exception
+        raise ValueError("choices input not found in choice_combinations dictionary.")
+
+    return result
 
