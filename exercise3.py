@@ -9,12 +9,12 @@ Example:
 
 """
 
-def decide_rps(player1, player2):
+def decide_rps(player1_choice, player2_choice):
     """
     Returns the results of the Rock, Paper, Scissors game.
 
     :param:
-        player1, player2 (string): choices made by player1 and player2
+        player1_choice, player2_choice (string): choices made by player1_choice and player2
             Accepted values are "R" for Rock, "P" for Paper, and "S" for Scissors
 
     :return:
@@ -29,40 +29,38 @@ def decide_rps(player1, player2):
     """
 
     # Define valid inputs
-    if type(player1) is str and type(player2) is str:
-        if (player1 == "R") or (player1 == "P") or (player1 == "S"):
-            # These are valid player1 inputs
-        else:
-            # If the input is not valid, raise the ValueError Exception
-            raise ValueError("Invalid player1 input")
-        if (player2 == "R") or (player2 == "P") or (player2 == "S"):
-            # These are valid player2 inputs
-        else:
-            # If the input is not valid, raise the ValueError Exception
-            raise ValueError("Invalid player2 input")
+    valid_input_array = ["R","P","S"]
+    if type(player1_choice) is str and type(player2_choice) is str:
+        if player1_choice not in valid_input_array:
+            # raise the ValueError Exception If the input for player 2 is not valid,
+            raise ValueError("Invalid player1 input - Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
+        elif player2_choice not in valid_input_array:
+            # raise the ValueError Exception If the input for player 2 is not valid,
+            raise ValueError("Invalid player2 input - Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
     else:
         # Raise a TypeError exception
-        raise TypeError("Invalid type input - Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
+        raise TypeError("Invalid input type -  Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
 
-    # Define choices and corresponding results in dictionary
-    choice_combinations = {}
-    choice_combinations["RR"] = 0
-    choice_combinations["RP"] = 2
-    choice_combinations["RS"] = 1
-    choice_combinations["PR"] = 1
-    choice_combinations["PP"] = 0
-    choice_combinations["PS"] = 2
-    choice_combinations["SR"] = 2
-    choice_combinations["SP"] = 1
-    choice_combinations["SS"] = 0
+    # Define dictionary variable that contains the player1 winning combination
+    # key = Player 1 choice : Value = Player 2's losing choice
+    choice_combinations_for_player1_wins = {"R":"S", "P":"R", "S":"P"}
 
     # Look up choices input values in dictionary and return game result
-    choices = (player1 & player2)
-    if choices in choice_combinations:
-        result = choice_combinations[choices]
+
+    # Default Result set to tie
+    result = 0
+
+    # check whether game ties or not.
+    # if game doesn't tie, then check whether player 1 wins by comparing player2's
+    # choice with corresponding values in dictionary
+    # If value is not found in the dictionary, then it means player 2 wins.
+    if player1_choice == player2_choice:
+        result = 0
     else:
-        # Raise a ValueError Exception
-        raise ValueError("choices input not found in choice_combinations dictionary.")
+        if choice_combinations_for_player1_wins[player1_choice] == player2_choice:
+            result = 1
+        else:
+            result = 2
 
     return result
 
