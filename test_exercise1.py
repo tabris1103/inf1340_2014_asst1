@@ -29,6 +29,7 @@ def test_letter_grade():
     
     with pytest.raises(ValueError):
         grade_to_gpa("q")
+        grade_to_gpa("+")
     # add more tests for invalid values
 
 
