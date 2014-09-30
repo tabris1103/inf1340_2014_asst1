@@ -42,7 +42,7 @@ def grade_to_gpa(grade):
     gpa = 0.0
 
     if type(grade) is str:
-        valid_letter_grade_array =  ["A+", "A","A-","B+","B","B-","FZ"]
+        valid_letter_grade_array =["A+", "A", "A-", "B+", "B", "B-", "FZ"]
 
         # Check that letter grade input is a valid input by comparing with array
         if grade in valid_letter_grade_array:
