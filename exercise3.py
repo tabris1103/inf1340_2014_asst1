@@ -29,7 +29,7 @@ def decide_rps(player1_choice, player2_choice):
     """
 
     # Define valid inputs
-    valid_input_array = ["R","P","S"]
+    valid_input_array = ["R", "P", "S"]
     if type(player1_choice) is str and type(player2_choice) is str:
         if player1_choice not in valid_input_array:
             # raise the ValueError Exception If the input for player 2 is not valid,
@@ -43,7 +43,7 @@ def decide_rps(player1_choice, player2_choice):
 
     # Define dictionary variable that contains the player1 winning combination
     # key = Player 1 choice : Value = Player 2's losing choice
-    choice_combinations_for_player1_wins = {"R":"S", "P":"R", "S":"P"}
+    choice_combinations_for_player1_wins = {"R": "S", "P": "R", "S": "P"}
 
     # Look up choices input values in dictionary and return game result
 
