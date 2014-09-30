@@ -46,12 +46,12 @@ def checksum (upc):
             check_sum = 0
 
             # generate checksum using the first 11 digits provided
-            for string_index in range(0,11):
+            for string_index in range(0, 11):
                 if string_index % 2 == 0:
-                    check_sum += int(upc_array.pop(0)) * 3
+                    check_sum += int(upc_array[string_index]) * 3
                     print("Check Sum at " + str(string_index) + " = " + str(check_sum))
                 else:
-                    check_sum += int(upc_array.pop(0))
+                    check_sum += int(upc_array[string_index])
                     print("Check Sum at " + str(string_index) + " = " + str(check_sum))
 
             #Calculate modulo 10 of check_sum
@@ -62,7 +62,7 @@ def checksum (upc):
 
             # check calculated last digit against the the twelfth digit
             # return True if they are equal, False otherwise
-            last_digit = int(upc_array.pop(0))
+            last_digit = int(upc_array[11])
             if subtracting_from_10 == last_digit:
                 is_correct_upc_code = True
     else:
