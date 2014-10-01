@@ -35,7 +35,7 @@ def test_letter_grade():
 
 def test_numerical_grade():
     """
-    Numeric grade inputs
+    Integer mark (numerical grade) inputs
     """
     assert grade_to_gpa(100) == 4.0
     assert grade_to_gpa(95) == 4.0
