@@ -78,7 +78,7 @@ def grade_to_gpa(grade):
     return gpa
 
 
-def mark_to_letter(mark):
+def mark_to_letter(integer_mark):
     """
     Return the corresponding letter grade for a given integer mark (numerical grade).
 
@@ -95,20 +95,20 @@ def mark_to_letter(mark):
 
     letter_grade_to_be_returned = ""
     # Check that integer mark (numerical grade) input is in the accepted range
-    if (mark >= 0) and (mark <= 100):
+    if (integer_mark >= 0) and (integer_mark <= 100):
 
        # Assign corresponding letter grades for GPA assignments
-        if mark >= 90:
+        if integer_mark >= 90:
             letter_grade_to_be_returned = "A+"
-        elif mark >= 85:
+        elif integer_mark >= 85:
             letter_grade_to_be_returned = "A"
-        elif mark >= 80:
+        elif integer_mark >= 80:
             letter_grade_to_be_returned = "A-"
-        elif mark >= 77:
+        elif integer_mark >= 77:
             letter_grade_to_be_returned = "B+"
-        elif mark >= 73:
+        elif integer_mark >= 73:
             letter_grade_to_be_returned = "B"
-        elif mark >= 70:
+        elif integer_mark >= 70:
             letter_grade_to_be_returned = "B-"
         else:
             letter_grade_to_be_returned = "FZ"
