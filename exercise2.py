@@ -37,11 +37,11 @@ def checksum(upc):
         if len(upc) != 12:
             raise ValueError("Length of the UPC input is not equal to 12")
 
-        # Verify that the UPC input does not contain any characters or strings
+        # Verify that the UPC input does not contain any non-numerical characters or strings
         elif str(upc).isnumeric() is False:
-            raise ValueError("UPC code must not contain any string/character values")
+            raise ValueError("UPC code must not contain any non-numerical characters or string values")
         else:
-            # Convert string to array
+            # Convert string to list
             upc_array = list(upc)
             check_sum = 0
 
