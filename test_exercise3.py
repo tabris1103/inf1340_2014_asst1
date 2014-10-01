@@ -14,11 +14,13 @@ __status__ = "Prototype"
 import pytest
 from exercise3 import decide_rps
 
-# Test procedures to check whether decide_rps function correctly or not
-# when the valid input parameters have been passed.
+# Test procedures to check whether the decide_rps function outputs
+# correct game results when player1 and player2 inputs are valid.
+
+
 def test_decide_rps():
     """
-    Inputs that are the correct format and length
+    Inputs that are valid (have the correct format and length)
     """
 
     # Case - Player 1 Wins
@@ -36,8 +38,10 @@ def test_decide_rps():
     assert decide_rps("S","S") == 0
     assert decide_rps("P","P") == 0
 
-# Test procedures to check whether decide_rps function handles the exception properly or not
-# when the invalid inputs (in terms of format or value) have been passed.
+# Test procedures to check whether the decide_rps function correctly
+# raises an exception (error message) when player1 and player2 inputs are invalid.
+
+
 def test_inputs():
     """
     Inputs that are incorrect format
