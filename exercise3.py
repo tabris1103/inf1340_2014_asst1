@@ -10,6 +10,8 @@ Example:
 
 """
 
+__author__ = 'Kyungho Jung & Christine Oh'
+__status__ = "Completed"
 
 def decide_rps(player1_choice, player2_choice):
     """
@@ -27,25 +29,25 @@ def decide_rps(player1_choice, player2_choice):
 
     :raises:
         TypeError if choice input is not a string
-        ValueError if choice input is is not "R", "P", or "S".
+        ValueError if choice input is is not "Rock", "Paper", or "Scissors".
     """
 
     # Define valid choice inputs
-    valid_input_array = ["R", "P", "S"]
+    valid_input_array = ["Rock", "Paper", "Scissors"]
     if type(player1_choice) is str and type(player2_choice) is str:
         if player1_choice not in valid_input_array:
             # Raise the ValueError Exception if the input for player1 is not valid,
-            raise ValueError("Invalid player1 input - Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
+            raise ValueError("Invalid player1 input - Enter 'Rock' for Rock, 'Paper' for Paper, 'Scissors' for Scissors.")
         elif player2_choice not in valid_input_array:
             # Raise the ValueError Exception if the input for player2 is not valid,
-            raise ValueError("Invalid player2 input - Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
+            raise ValueError("Invalid player2 input - Enter 'Rock' for Rock, 'Paper' for Paper, 'Scissors' for Scissors.")
     else:
         # Raise a TypeError exception
-        raise TypeError("Invalid input type -  Enter 'R' for Rock, 'P' for Paper, 'S' for Scissors.")
+        raise TypeError("Invalid input type -  Enter 'Rock' for Rock, 'Paper' for Paper, 'Scissors' for Scissors.")
 
     # Define dictionary variable that contains choice combination resulting in a win for player1
     # Key = player1's winning choice : Value = player2's losing choice
-    choice_combinations_for_player1_wins = {"R": "S", "P": "R", "S": "P"}
+    choice_combinations_for_player1_wins = {"Rock": "Scissors", "Paper": "Rock", "Scissors": "Paper"}
 
     # Look up choice input values in dictionary and return game result
 
