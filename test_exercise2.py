@@ -2,13 +2,8 @@
 
 """ Module to test exercise2.py """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-
-__copyright__ = "2014 Susan Sim"
-__license__ = "MIT License"
-
-__status__ = "Prototype"
+__author__ = 'Kyungho Jung & Christine Oh'
+__status__ = "Completed"
 
 # imports one per line
 
@@ -25,7 +20,6 @@ def test_checksum():
     assert checksum("085392132225") is True
     assert checksum("717951000841") is False
     assert checksum("123412341234") is False
-    # other tests
 
 
 def test_input():
@@ -34,14 +28,28 @@ def test_input():
     """
     with pytest.raises(TypeError):
         checksum(1.0)
+    with pytest.raises(TypeError):
         checksum(786936224306)
+    with pytest.raises(TypeError):
+        checksum(False)
+    with pytest.raises(TypeError):
+        checksum("12341234" + 1234)
 
+    # Raise ValueError when the length of the input is not equal to 12
     with pytest.raises(ValueError):
-        # Case when there is a non numeric value in the argument string
-        checksum("123s56789011")
         checksum("1")
+    with pytest.raises(ValueError):
         checksum("1234567890")
+    with pytest.raises(ValueError):
+        checksum("1234123412341")
 
-    # other tests
+    # Raise ValueError if one or more of the given digits are not numeric
+    with pytest.raises(ValueError):
+        checksum("123s56789011")
+    with pytest.raises(ValueError):
+        checksum("abcdefghijkl")
 
-# add functions for any other tests
+    # Raise ValueError if negative input was given
+    with pytest.raises(ValueError):
+        checksum("-212341231")
+

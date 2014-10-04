@@ -2,13 +2,8 @@
 
 """ Module to test exercise1.py """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-
-__copyright__ = "2014 Susan Sim"
-__license__ = "MIT License"
-
-__status__ = "Prototype"
+__author__ = 'Kyungho Jung & Christine Oh'
+__status__ = "Completed"
 
 # imports one per line
 import pytest
@@ -26,11 +21,18 @@ def test_letter_grade():
     assert grade_to_gpa("B") == 3.0
     assert grade_to_gpa("B-") == 2.7
     assert grade_to_gpa("FZ") == 0.0
-    
+
+    # Test wrong letter grade
     with pytest.raises(ValueError):
         grade_to_gpa("q")
+
+    # Test Special Character
+    with pytest.raises(ValueError):
         grade_to_gpa("+")
-    # add more tests for invalid values
+
+    # Test Numeric String grade
+    with pytest.raises(ValueError):
+        grade_to_gpa("88")
 
 
 def test_numerical_grade():
@@ -65,17 +67,25 @@ def test_numerical_grade():
     assert grade_to_gpa(37) == 0.0
     assert grade_to_gpa(0) == 0.0
 
+    # Numeric Grade greater than 100
     with pytest.raises(ValueError):
         grade_to_gpa(101)
+
+    # Numeric Grade less than 0 (i.e. negative grade)
+    with pytest.raises(ValueError):
         grade_to_gpa(-1)
 
 
-def test_float_input():
-    """
-    Float inputs
-    """
+def test_wrong_input_type():
+
+    # Float Inputs
     with pytest.raises(TypeError):
         grade_to_gpa(82.5)
+
+    # Boolean Inputs
+    with pytest.raises(TypeError):
+        grade_to_gpa(True)
+
 
 # add functions for any other tests
 
