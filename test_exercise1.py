@@ -22,17 +22,23 @@ def test_letter_grade():
     assert grade_to_gpa("B-") == 2.7
     assert grade_to_gpa("FZ") == 0.0
 
-    # Test wrong letter grade
+    # Test for invalid letter grade input
     with pytest.raises(ValueError):
-        grade_to_gpa("q")
+        grade_to_gpa("Q")
 
-    # Test Special Character
+    # Test for invalid input - special characters
     with pytest.raises(ValueError):
         grade_to_gpa("+")
 
-    # Test Numeric String grade
+    with pytest.raises(ValueError):
+        grade_to_gpa("A*")
+
+    # Test for invalid input - numeric input
     with pytest.raises(ValueError):
         grade_to_gpa("88")
+
+    with pytest.raises(ValueError):
+        grade_to_gpa("9+")
 
 
 def test_numerical_grade():
@@ -67,11 +73,11 @@ def test_numerical_grade():
     assert grade_to_gpa(37) == 0.0
     assert grade_to_gpa(0) == 0.0
 
-    # Numeric Grade greater than 100
+    # Integer mark (numeric grade) input greater than 100
     with pytest.raises(ValueError):
         grade_to_gpa(101)
 
-    # Numeric Grade less than 0 (i.e. negative grade)
+    # Integer mark (numeric grade) input less than 0 (i.e. negative grade)
     with pytest.raises(ValueError):
         grade_to_gpa(-1)
 
@@ -87,5 +93,5 @@ def test_wrong_input_type():
         grade_to_gpa(True)
 
 
-# add functions for any other tests
+
 
