@@ -6,8 +6,6 @@ __author__ = 'Kyungho Jung & Christine Oh'
 __status__ = "Completed"
 
 # imports one per line
-
-# imports one per line
 import pytest
 from exercise2 import checksum
 
@@ -43,13 +41,15 @@ def test_input():
     with pytest.raises(ValueError):
         checksum("1234123412341")
 
-    # Raise ValueError if one or more of the given digits are not numeric
+    # Raise ValueError if one or more of the input values are not numeric
     with pytest.raises(ValueError):
         checksum("123s56789011")
     with pytest.raises(ValueError):
         checksum("abcdefghijkl")
+    with pytest.raises(ValueError):
+        checksum("123*45@67890")
 
-    # Raise ValueError if negative input was given
+    # Raise ValueError if negative input was entered
     with pytest.raises(ValueError):
         checksum("-212341231")
 
