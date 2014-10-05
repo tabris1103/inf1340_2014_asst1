@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
+
 """ Module to test exercise3.py """
 
 __author__ = 'Kyungho Jung & Christine Oh'
 __status__ = "Completed"
 
 # imports one per line
-
 import pytest
 from exercise3 import decide_rps
 
 # Test procedures to check whether the decide_rps function outputs
 # correct game results when player1 and player2 inputs are valid.
+
+
 def test_decide_rps():
     """
     Inputs that are valid (have the correct format and length)
@@ -75,5 +77,5 @@ def test_inputs():
     with pytest.raises(ValueError):
         decide_rps("Rock", "1")
 
-# other tests
+
 
